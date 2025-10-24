@@ -7,14 +7,16 @@ app.get('/', (req, res) => {
         message: 'Hello from Nixpacks Test App!',
         timestamp: new Date().toISOString(),
         environment: process.env.NODE_ENV || 'development',
-        version: '1.0.0'
+        version: '1.0.0',
+        deployed_with: 'Coolify + Nixpacks'
     });
 });
 
 app.get('/health', (req, res) => {
     res.status(200).json({
         status: 'healthy',
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
+        service: 'nixpacks-test-app'
     });
 });
 
